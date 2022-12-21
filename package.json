@@ -22,7 +22,7 @@
   "homepage": "https://github.com/HongSiKi/PaintingDiary,git#readme",
   "lint-staged": {
     "./src/**/*.{js,jsx,ts,tsx}": [
-      "npm run lint"
+      "npm run lint -- --fix"
     ]
   },
   "dependencies": {
