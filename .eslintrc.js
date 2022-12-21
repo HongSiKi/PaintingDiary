@@ -5,6 +5,7 @@ module.exports = {
     node: true,
   },
   extends: [
+    'airbnb',
     'eslint:recommended',
     'standard-with-typescript',
     'plugin:react/recommended',
@@ -26,6 +27,8 @@ module.exports = {
         doubleQuote: true,
       },
     ],
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.tsx'] }],
+    'no-alert': 'off',
   },
   settings: {
     react: {
