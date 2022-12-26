@@ -4,9 +4,10 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
-      black: 333333,
-      deepGray: 555555,
-      lightGray: '#eeeeee',
+      deepBlack: 333333,
+      lightBlack: 555555,
+      deepGray: '#eeeeee',
+      lightGray: '#fafafa',
     },
   },
   plugins: [],
