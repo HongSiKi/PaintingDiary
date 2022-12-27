@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
-function Modal({ setModalOpen }: any) {
+function Modal({ setModalOpen, setLogin }: any) {
   const closeModal = () => {
     setModalOpen(false);
   };
@@ -14,6 +14,11 @@ function Modal({ setModalOpen }: any) {
     };
     document.addEventListener('mousedown', handler);
   });
+
+  // 로그인이 항상 성공된 상태라고 가정
+  const isLogin = () => {
+    setLogin(true);
+  };
 
   return (
     <div
@@ -37,7 +42,9 @@ function Modal({ setModalOpen }: any) {
             type="password"
             className="h-[25%] mb-[25px] p-[5px] border-2 border-deepGray rounded-[3px]"
           />
-          <button className="h-[28%] bg-yellow rounded-[3px]">로그인</button>
+          <button onClick={isLogin} className="h-[28%] bg-yellow rounded-[3px]">
+            로그인
+          </button>
         </div>
       </form>
 
