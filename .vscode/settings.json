@@ -5,5 +5,5 @@
   },
   "prettier.disableLanguages": ["js"],
   "files.autoSave": "onFocusChange",
-  "cSpell.words": ["tailwindcss"]
+  "cSpell.words": ["Kakao", "tailwindcss"]
 }
