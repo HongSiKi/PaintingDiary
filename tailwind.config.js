@@ -8,6 +8,10 @@ module.exports = {
       lightBlack: 555555,
       deepGray: '#eeeeee',
       lightGray: '#fafafa',
+
+      yellow: '#FFF59D',
+
+      backRgba: 'rgba(11,19,30,.37)',
     },
   },
   plugins: [],
