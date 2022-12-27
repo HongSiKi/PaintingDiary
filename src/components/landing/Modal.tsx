@@ -1,10 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 function Modal({ setModalOpen, setLogin }: any) {
+  const modalRef = useRef<HTMLDivElement>(null);
+
   const closeModal = () => {
     setModalOpen(false);
   };
-  const modalRef = useRef<HTMLDivElement>(null);
+  // 로그인이 항상 성공된 상태라고 가정
+  const isLogin = () => {
+    setLogin(true);
+  };
 
   useEffect(() => {
     const handler = (e: any) => {
@@ -14,11 +19,6 @@ function Modal({ setModalOpen, setLogin }: any) {
     };
     document.addEventListener('mousedown', handler);
   });
-
-  // 로그인이 항상 성공된 상태라고 가정
-  const isLogin = () => {
-    setLogin(true);
-  };
 
   return (
     <div
