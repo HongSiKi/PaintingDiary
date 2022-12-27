@@ -1,4 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
+
+import Kakao from '../../../public/images/KakaoLogin.png';
 
 function Modal({ setModalOpen, setLogin }: any) {
   const modalRef = useRef<HTMLDivElement>(null);
@@ -52,7 +54,9 @@ function Modal({ setModalOpen, setLogin }: any) {
         ----- 간편 로그인 -----
       </div>
       <div className="flex w-[100%] mt-[10px] items-center justify-center">
-        <button>카카오톡</button>
+        <button>
+          <img src={Kakao} />
+        </button>
         <button>네이버</button>
       </div>
     </div>
