@@ -1,11 +1,11 @@
 import React from 'react';
 
-import UnLoggedMenu from '../components/landing/UnLoggedMenu';
+import Menu from '../components/landing/Menu';
 
 function Landing() {
   return (
     <div>
-      <UnLoggedMenu />
+      <Menu />
     </div>
   );
 }

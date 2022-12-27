@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Logo from '../../../public/images/Logo.jpeg';
 import Modal from './Modal';
 
-function UnLoggedMenu() {
+function Menu() {
   const [modalOpen, setModalOpen] = useState(false);
   const [login, setLogin] = useState(false);
 
@@ -25,4 +25,4 @@ function UnLoggedMenu() {
   );
 }
 
-export default UnLoggedMenu;
+export default Menu;
