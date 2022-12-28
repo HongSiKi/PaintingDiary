@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Logo from '../../../public/images/Logo.jpeg';
 import LoginModal from './LoginModal';
+import LoggedMenu from './LoggedMenu';
 
 function Menu() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -23,12 +24,7 @@ function Menu() {
       )}
       {!login && modalOpen && <LoginModal setModalOpen={setModalOpen} setLogin={setLogin} />}
 
-      {login && (
-        <button type="button" className="mr-5">
-          새 캐릭터 생성하기
-        </button>
-      )}
-      {login && <button type="button">마이룸 꾸미기</button>}
+      {login && <LoggedMenu />}
     </div>
   );
 }
