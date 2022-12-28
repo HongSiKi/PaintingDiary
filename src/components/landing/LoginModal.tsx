@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import KakaoLogin from '../../../public/images/KakaoLogin.png';
 import NaverLogin from '../../../public/images/NaverLogin.png';
 
-function Modal({ setModalOpen, setLogin }: any) {
+function LoginModal({ setModalOpen, setLogin }: any) {
   const modalRef = useRef<HTMLDivElement>(null);
 
   const closeModal = () => {
@@ -66,4 +66,4 @@ function Modal({ setModalOpen, setLogin }: any) {
   );
 }
 
-export default Modal;
+export default LoginModal;

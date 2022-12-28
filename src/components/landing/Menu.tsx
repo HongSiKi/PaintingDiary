@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Logo from '../../../public/images/Logo.jpeg';
-import Modal from './Modal';
+import LoginModal from './LoginModal';
 
 function Menu() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -21,7 +21,7 @@ function Menu() {
           로그인
         </button>
       )}
-      {!login && modalOpen && <Modal setModalOpen={setModalOpen} setLogin={setLogin} />}
+      {!login && modalOpen && <LoginModal setModalOpen={setModalOpen} setLogin={setLogin} />}
 
       {login && (
         <button type="button" className="mr-5">
