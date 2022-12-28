@@ -21,7 +21,7 @@ function Modal({ setModalOpen, setLogin }: any) {
       }
     };
     document.addEventListener('mousedown', handler);
-  });
+  }, []);
 
   return (
     <div
