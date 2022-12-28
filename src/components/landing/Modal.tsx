@@ -16,7 +16,7 @@ function Modal({ setModalOpen, setLogin }: any) {
 
   useEffect(() => {
     const handler = (e: any) => {
-      if (modalRef.current && !modalRef.current.contains(e.target)) {
+      if (modalRef.current != null && !modalRef.current.contains(e.target)) {
         setModalOpen(false);
       }
     };
@@ -28,7 +28,7 @@ function Modal({ setModalOpen, setLogin }: any) {
       ref={modalRef}
       className="w-[20%] max-h-[45%] z-999 absolute inset-0 m-auto border-2 border-deepGray rounded-[10px] text-deepBlack"
     >
-      <button onClick={closeModal} className="absolute right-[10px] top-[10px]">
+      <button type="button" onClick={closeModal} className="absolute right-[10px] top-[10px]">
         X
       </button>
 
@@ -45,7 +45,7 @@ function Modal({ setModalOpen, setLogin }: any) {
             type="password"
             className="h-[25%] mb-[25px] p-[5px] border-2 border-deepGray rounded-[3px]"
           />
-          <button onClick={isLogin} className="h-[28%] bg-yellow rounded-[3px]">
+          <button type="submit" onClick={isLogin} className="h-[28%] bg-yellow rounded-[3px]">
             로그인
           </button>
         </div>
@@ -55,10 +55,10 @@ function Modal({ setModalOpen, setLogin }: any) {
         ----- 간편 로그인 -----
       </div>
       <div className="flex w-[100%] mt-[10px] items-center justify-center">
-        <a className="max-w-[30%] mr-[10px]">
+        <a href="http://localhost:33000" className="max-w-[30%] mr-[10px]">
           <img src={KakaoLogin} alt="카카오 로그인 버튼" />
         </a>
-        <a className="max-w-[30%]">
+        <a href="http://localhost:33000" className="max-w-[30%]">
           <img src={NaverLogin} alt="네이버 로그인 버튼" />
         </a>
       </div>

@@ -27,10 +27,26 @@ module.exports = {
         doubleQuote: true,
       },
     ],
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.tsx'] }],
     'no-alert': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
   },
   settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
     react: {
       version: 'detect',
     },
