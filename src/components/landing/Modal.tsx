@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
 import KakaoLogin from '../../../public/images/KakaoLogin.png';
+import NaverLogin from '../../../public/images/NaverLogin.png';
 
 function Modal({ setModalOpen, setLogin }: any) {
   const modalRef = useRef<HTMLDivElement>(null);
@@ -54,10 +55,12 @@ function Modal({ setModalOpen, setLogin }: any) {
         ----- 간편 로그인 -----
       </div>
       <div className="flex w-[100%] mt-[10px] items-center justify-center">
-        <a>
+        <a className="max-w-[30%] mr-[10px]">
           <img src={KakaoLogin} alt="카카오 로그인 버튼" />
         </a>
-        <a>네이버</a>
+        <a className="max-w-[30%]">
+          <img src={NaverLogin} alt="네이버 로그인 버튼" />
+        </a>
       </div>
     </div>
   );
