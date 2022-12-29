@@ -26,13 +26,13 @@ function LoginModal({ setModalOpen, setLogin }: any) {
   return (
     <div
       ref={modalRef}
-      className="w-[20%] max-h-[45%] z-999 absolute inset-0 m-auto border-2 border-deepGray rounded-[10px] text-deepBlack"
+      className="w-[25%] max-h-[55%] z-999 absolute inset-0 m-auto border-2 border-deepGray rounded-[10px] text-deepBlack"
     >
       <button type="button" onClick={closeModal} className="absolute right-[10px] top-[10px]">
         X
       </button>
 
-      <form className="flex flex-col h-[80%] items-center">
+      <form className="flex flex-col h-[65%] items-center">
         <h1 className="mt-[10%] text-[35px]">로그인</h1>
         <div className="flex flex-col mt-[7%] w-[55%] h-[50%]">
           <input
@@ -51,15 +51,15 @@ function LoginModal({ setModalOpen, setLogin }: any) {
         </div>
       </form>
 
-      <div className="flex w-[100%] mt-[-10px] items-center justify-center text-[14px] text-center">
-        ----- 간편 로그인 -----
+      <div className="flex w-[100%] my-2 items-center justify-center text-[14px] text-center">
+        --- 간편 로그인 ---
       </div>
-      <div className="flex w-[100%] mt-[10px] items-center justify-center">
-        <a href="http://localhost:33000" className="max-w-[30%] mr-[10px]">
+      <div className="flex flex-col w-[100%] h-[28%] justify-between items-center">
+        <a href="http://localhost:33000" className="max-w-[73%]">
           <img src={KakaoLogin} alt="카카오 로그인 버튼" />
         </a>
-        <a href="http://localhost:33000" className="max-w-[30%]">
-          <img src={NaverLogin} alt="네이버 로그인 버튼" />
+        <a href="http://localhost:33000" className="max-w-[73%]">
+          <img src={NaverLogin} alt="네이버 로그인 버튼" className="h-[55%]" />
         </a>
       </div>
     </div>
