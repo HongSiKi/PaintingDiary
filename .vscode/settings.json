@@ -4,5 +4,6 @@
     "source.fixAll.eslint": true
   },
   "prettier.disableLanguages": ["js"],
-  "files.autoSave": "onFocusChange"
+  "files.autoSave": "onFocusChange",
+  "cSpell.words": ["Kakao", "Naver", "tailwindcss"]
 }
