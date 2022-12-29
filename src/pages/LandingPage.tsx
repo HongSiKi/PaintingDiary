@@ -2,7 +2,7 @@ import React from 'react';
 
 import Menu from '../components/landing/Menu';
 
-function Landing() {
+function LandingPage() {
   return (
     <div>
       <Menu />
@@ -10,4 +10,4 @@ function Landing() {
   );
 }
 
-export default Landing;
+export default LandingPage;
