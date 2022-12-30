@@ -8,7 +8,7 @@
     "strict": true,
     "sourceMap": true,
     "target": "esnext",
-    "typeRoots": ["./node_modules/@types", "@types"]
+    "typeRoots": ["./node_modules/@types", "@types", "./node_modules/**/declarations"]
   },
   "exclude": ["node_modules"]
 }
