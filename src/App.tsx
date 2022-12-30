@@ -13,8 +13,8 @@ import './styles/index.css';
 function App() {
   return (
     <BrowserRouter>
-      <LandingPage />
       <Routes>
+        <Route path="/" element={<LandingPage />} />
         <Route path="makeCharacter" element={<MakeCharacterPage />} />
         <Route path="decorateCharacter" element={<DecorateCharacterPage />} />
         <Route path="decorateMyRoom" element={<DecorateMyRoomPage />} />
