@@ -1,4 +1,6 @@
 import React from 'react';
+
+import Portfolio from './Portfolio';
 import Skills from './Skills';
 
 function CharacterDescription() {
@@ -10,7 +12,9 @@ function CharacterDescription() {
           <Skills />
         </div>
       </div>
-      <div className="bg-[pink] ml-[40px] w-[75%] h-[50%]">포트폴리오</div>
+      <div className="ml-[40px] w-[75%] h-[50%]">
+        <Portfolio />
+      </div>
     </div>
   );
 }
