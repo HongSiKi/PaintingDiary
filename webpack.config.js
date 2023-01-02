@@ -47,4 +47,10 @@ module.exports = {
       ],
     }),
   ],
+  devServer: {
+    host: 'localhost',
+    port: 33000,
+    open: true,
+    historyApiFallback: true,
+  },
 };
