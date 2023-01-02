@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unknown-property */
+
 import React from 'react';
 import { useGLTF } from '@react-three/drei';
 
