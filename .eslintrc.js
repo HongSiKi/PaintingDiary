@@ -22,6 +22,7 @@ module.exports = {
   ignorePatterns: ['.eslintrc.js'],
   plugins: ['@typescript-eslint', 'react', 'react-hooks', 'import', 'prettier'],
   rules: {
+    'react/no-unknown-property': ['error', { ignore: ['object'] }],
     'prettier/prettier': [
       'error',
       {
