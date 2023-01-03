@@ -2,9 +2,7 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
-import Shiba from './Shiba';
-
-function Character() {
+function Character({ model }: any) {
   return (
     <div className="h-[100%]">
       <Canvas
@@ -14,7 +12,7 @@ function Character() {
       >
         <Suspense fallback={null}>
           <OrbitControls />
-          <Shiba />
+          {model}
         </Suspense>
       </Canvas>
     </div>
