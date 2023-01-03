@@ -2,7 +2,11 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
-function Character({ model }: any) {
+interface CharacterProps {
+  model: JSX.Element[] | JSX.Element;
+}
+
+function Character({ model }: CharacterProps) {
   return (
     <div className="h-[100%]">
       <Canvas
