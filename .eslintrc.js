@@ -22,6 +22,7 @@ module.exports = {
   ignorePatterns: ['.eslintrc.js'],
   plugins: ['@typescript-eslint', 'react', 'react-hooks', 'import', 'prettier'],
   rules: {
+    'no-param-reassign': ['error', { props: false }],
     'prettier/prettier': [
       'error',
       {
@@ -44,6 +45,7 @@ module.exports = {
     'no-alert': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
   },
+
   settings: {
     'import/resolver': {
       node: {
