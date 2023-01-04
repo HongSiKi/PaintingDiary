@@ -10,6 +10,7 @@ module.exports = {
       lightGray: '#fafafa',
 
       yellow: '#FFF59D',
+      mustard: '#FFEAA7',
 
       backRgba: 'rgba(11,19,30,.37)',
     },
