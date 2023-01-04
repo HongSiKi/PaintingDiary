@@ -2,11 +2,11 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
-interface CharacterProps {
+interface CharacterProfileProps {
   model: JSX.Element[] | JSX.Element;
 }
 
-function Character({ model }: CharacterProps) {
+function CharacterProfile({ model }: CharacterProfileProps) {
   return (
     <div className="h-[100%]">
       <Canvas
@@ -23,4 +23,4 @@ function Character({ model }: CharacterProps) {
   );
 }
 
-export default Character;
+export default CharacterProfile;
