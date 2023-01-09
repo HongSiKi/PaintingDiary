@@ -9,10 +9,12 @@ import MyRoomPage from './pages/MyRoomPage';
 import MainPage from './pages/MainPage';
 import JoinPage from './pages/JoinPage';
 import './styles/index.css';
+import Menu from './components/landing/Menu';
 
 function App() {
   return (
     <BrowserRouter>
+      <Menu />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="makeCharacter" element={<MakeCharacterPage />} />
