@@ -2,7 +2,7 @@ import React from 'react';
 
 function Button({ text }: { text: string }) {
   return (
-    <button type="button" className="w-[45%] bg-deepGray text-center cursor-pointer">
+    <button type="button" className="w-[48%] bg-deepGray text-center cursor-pointer">
       {text}
     </button>
   );
