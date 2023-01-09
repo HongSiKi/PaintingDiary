@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Logo from '../../../public/images/Logo.jpeg';
+import Logo from '../../../public/images/column-logo/favicon-96x96.png';
 import LoginModal from './LoginModal';
 import LoggedMenu from './LoggedMenu';
 
