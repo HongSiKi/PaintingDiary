@@ -7,7 +7,7 @@ function Skills() {
 
   const addSkill = () => {
     const countArr = [...countList];
-    let counter = countArr.slice(-1)[0];
+    let counter = countArr.length;
     counter += 1;
     countArr.push(counter);
     setCountList(countArr);
