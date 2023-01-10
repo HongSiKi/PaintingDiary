@@ -21,9 +21,8 @@ function Skill({ countList }: any) {
               className="bg-deepGray w-[100%] flex items-center"
             >
               <div
-                className={`bg-yellow ease-linear duration-100 text-center h-[100%] w-[${
-                  (progress / 5) * 100
-                }%]`}
+                className={`h-[100%] w-[${(progress / 5) * 100}%] 
+                text-center text-[15px] bg-yellow ease-linear duration-100`}
               >
                 클릭
               </div>
