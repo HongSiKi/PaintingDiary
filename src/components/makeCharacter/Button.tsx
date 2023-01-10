@@ -1,8 +1,17 @@
 import React from 'react';
 
-function Button({ text }: { text: string }) {
+interface IButton {
+  text: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+function Button({ text, onClick }: IButton) {
   return (
-    <button type="button" className="w-[48%] bg-deepGray text-center cursor-pointer">
+    <button
+      type="button"
+      onClick={onClick}
+      className="w-[48%] bg-deepGray text-center cursor-pointer"
+    >
       {text}
     </button>
   );
