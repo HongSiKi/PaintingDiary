@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 
 function Skill({ countList }: any) {
-  const [progress, setProgress] = useState('');
+  const [progress, setProgress] = useState(1);
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setProgress(e.target.value);
+  const progressCount = () => {
+    if (progress === 5) setProgress(1);
+    else setProgress(progress + 1);
   };
 
   return (
@@ -14,12 +15,18 @@ function Skill({ countList }: any) {
           <div className="flex mb-[1%]">
             <input placeholder="기술" className="w-[40%] bg-deepGray text-center mr-[2%]" />
 
-            <div className="w-[100%] bg-deepGray">
-              <input
-                onChange={onChange}
-                placeholder="10단위 숫자만(ex.80)"
-                className={`h-[100%] w-[${progress}%] text-center focus:outline-none bg-yellow`}
-              />
+            <div
+              role="presentation"
+              onClick={progressCount}
+              className="bg-deepGray w-[100%] flex items-center"
+            >
+              <div
+                className={`bg-yellow ease-linear duration-100 text-center h-[100%] w-[${
+                  (progress / 5) * 100
+                }%]`}
+              >
+                클릭
+              </div>
             </div>
           </div>
 
