@@ -4,9 +4,14 @@ function Nickname() {
   const [nickname, setNickname] = useState<string>('');
   const [isDuplicate, setIsDuplicate] = useState<boolean>(false);
   const [isClick, setIsClick] = useState<boolean>(false);
+  const [message, setMessage] = useState<string>('');
 
   const onChangeNickname = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNickname(e.target.value);
+
+    if (e.target.value.length < 2 || e.target.value.length > 7) {
+      setMessage('2글자 이상 7글자 미만인 닉네임을 입력해주세요.');
+    } else setMessage('');
   };
   const checkDuplicate = () => {
     setIsClick(true);
@@ -27,12 +32,8 @@ function Nickname() {
           중복체크
         </button>
       </div>
+      {nickname.length > 0 ? <div>{message}</div> : ''}
       <div>
-        {nickname.length < 2 || nickname.length > 7 ? (
-          <div>2글자 이상 7글자 미만인 닉네임을 입력해주세요.</div>
-        ) : (
-          ''
-        )}
         {isClick && isDuplicate ? '다른 닉네임을 입력해주세요.' : ''}
         {isClick && !isDuplicate ? '사용가능한 닉네임입니다.' : ''}
       </div>
