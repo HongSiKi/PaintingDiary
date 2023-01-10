@@ -16,7 +16,7 @@ function Skill({ countList }: any) {
             <input placeholder="기술" className="w-[40%] bg-deepGray text-center mr-[2%]" />
 
             <div
-              role="presentation"
+              role="none"
               onClick={progressCount}
               className="bg-deepGray w-[100%] flex items-center"
             >
