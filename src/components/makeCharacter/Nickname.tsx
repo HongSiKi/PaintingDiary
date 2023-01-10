@@ -1,22 +1,29 @@
 import React, { useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../../redux/hook';
+
+import { nicknameSlice } from '../../redux/slices/nicknameSlice';
 
 function Nickname() {
+  const dispatch = useAppDispatch();
   const [nickname, setNickname] = useState<string>('');
-  const [isDuplicate, setIsDuplicate] = useState<boolean>(false);
-  const [isClick, setIsClick] = useState<boolean>(false);
-  const [message, setMessage] = useState<string>('');
+
+  const message = useAppSelector((state) => state.nickname.message);
+  const isDuplicate = useAppSelector((state) => state.nickname.isDuplicate);
+  const isClick = useAppSelector((state) => state.nickname.isClick);
 
   const onChangeNickname = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNickname(e.target.value);
 
     if (e.target.value.length < 2 || e.target.value.length > 7) {
-      setMessage('2글자 이상 7글자 미만인 닉네임을 입력해주세요.');
-    } else setMessage('');
+      dispatch(nicknameSlice.actions.message('2글자 이상 7글자 미만인 닉네임을 입력해주세요.'));
+    } else {
+      dispatch(nicknameSlice.actions.message(''));
+    }
   };
   const checkDuplicate = () => {
-    setIsClick(true);
+    dispatch(nicknameSlice.actions.isClick(true));
     // 항상 닉네임이 중복되지 않는다고 가정
-    setIsDuplicate(false);
+    dispatch(nicknameSlice.actions.isDuplicate(false));
     return { result: { duplicate_nickname: false } };
   };
 
@@ -35,7 +42,7 @@ function Nickname() {
       {nickname.length > 0 ? <div>{message}</div> : ''}
       <div>
         {isClick && isDuplicate ? '다른 닉네임을 입력해주세요.' : ''}
-        {isClick && !isDuplicate ? '사용가능한 닉네임입니다.' : ''}
+        {isClick && !isDuplicate && message === '' ? '사용가능한 닉네임입니다.' : ''}
       </div>
     </>
   );
