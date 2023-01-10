@@ -20,7 +20,12 @@ function Skills() {
         <div>{countList.length} / 5</div>
       </div>
       <Skill countList={countList} />
-      <button onClick={addSkill} type="button" className="h-[8%] pl-[1%] rounded-[23px] bg-yellow">
+      <button
+        onClick={addSkill}
+        type="button"
+        className="h-[8%] pl-[1%] rounded-[23px] bg-yellow"
+        disabled={countList.length >= 5}
+      >
         스킬 추가
       </button>
     </>
