@@ -47,6 +47,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 1,
     'react/require-default-props': 'warn',
     'import/prefer-default-export': 'warn',
+    '@typescript-eslint/strict-boolean-expressions': 0,
   },
 
   settings: {
