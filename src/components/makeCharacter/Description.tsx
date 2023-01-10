@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAppSelector } from '../../redux/hook';
 
 import Button from './Button';
 import Nickname from './Nickname';
@@ -10,6 +11,8 @@ function Description() {
   const moveToMain = () => {
     navigate('/');
   };
+  const message = useAppSelector((state) => state.nickname.message);
+  const isDuplicate = useAppSelector((state) => state.nickname.isDuplicate);
 
   return (
     <div className="flex flex-col w-[70%] h-[70%] pl-[3%]">
@@ -20,7 +23,7 @@ function Description() {
       />
       <Skills />
       <div className="flex h-[8%] mt-[5%] justify-between">
-        <Button onClick={moveToMain} text="생성완료" />
+        <Button onClick={moveToMain} text="생성완료" disabled={!(!isDuplicate && message === '')} />
         <Button text="취소" />
       </div>
     </div>

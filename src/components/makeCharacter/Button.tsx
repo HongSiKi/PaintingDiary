@@ -12,7 +12,11 @@ function Button({ text, onClick, disabled }: IButton) {
       type="button"
       onClick={onClick}
       disabled={disabled}
-      className="w-[48%] bg-deepGray text-center cursor-pointer"
+      className={
+        disabled
+          ? 'w-[48%] bg-deepGray text-center cursor-pointer'
+          : 'w-[48%] bg-yellow text-center cursor-pointer'
+      }
     >
       {text}
     </button>
