@@ -1,10 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Button from './Button';
 import Nickname from './Nickname';
 import Skills from './Skills';
 
 function Description() {
+  const navigate = useNavigate();
+  const moveToMain = () => {
+    navigate('/');
+  };
+
   return (
     <div className="flex flex-col w-[70%] h-[70%] pl-[3%]">
       <Nickname />
@@ -14,7 +20,7 @@ function Description() {
       />
       <Skills />
       <div className="flex h-[8%] mt-[5%] justify-between">
-        <Button text="생성완료" />
+        <Button onClick={moveToMain} text="생성완료" />
         <Button text="취소" />
       </div>
     </div>
