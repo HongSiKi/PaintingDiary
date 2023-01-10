@@ -46,6 +46,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-unused-vars': 1,
     'react/require-default-props': 'warn',
+    'import/prefer-default-export': 'warn',
   },
 
   settings: {
