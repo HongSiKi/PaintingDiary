@@ -28,6 +28,11 @@ function Nickname() {
         </button>
       </div>
       <div>
+        {nickname.length < 2 || nickname.length > 7 ? (
+          <div>2글자 이상 7글자 미만인 닉네임을 입력해주세요.</div>
+        ) : (
+          ''
+        )}
         {isClick && isDuplicate ? '다른 닉네임을 입력해주세요.' : ''}
         {isClick && !isDuplicate ? '사용가능한 닉네임입니다.' : ''}
       </div>
