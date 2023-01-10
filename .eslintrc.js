@@ -44,7 +44,7 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.tsx'] }],
     'no-alert': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-unused-vars': 1,
+    '@typescript-eslint/no-unused-vars': 'warn',
     'react/require-default-props': 'warn',
     'import/prefer-default-export': 'warn',
     '@typescript-eslint/strict-boolean-expressions': 0,
