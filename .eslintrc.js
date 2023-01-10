@@ -45,6 +45,7 @@ module.exports = {
     'no-alert': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-unused-vars': 1,
+    'react/require-default-props': 'warn',
   },
 
   settings: {
