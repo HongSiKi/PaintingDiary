@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
+import { KAKAO_LOGIN_URL, NAVER_LOGIN_URL } from '../../constants/url';
 import KakaoLogin from '../../../public/images/KakaoLogin.png';
 import NaverLogin from '../../../public/images/NaverLogin.png';
 
@@ -55,10 +56,10 @@ function LoginModal({ setModalOpen, setLogin }: any) {
         --- 간편 로그인 ---
       </div>
       <div className="flex flex-col w-[100%] h-[28%] justify-between items-center">
-        <a href="http://localhost:33000" className="max-w-[73%]">
+        <a href={KAKAO_LOGIN_URL} className="max-w-[73%]">
           <img src={KakaoLogin} alt="카카오 로그인 버튼" />
         </a>
-        <a href="http://localhost:33000" className="max-w-[73%]">
+        <a href={NAVER_LOGIN_URL} className="max-w-[73%]">
           <img src={NaverLogin} alt="네이버 로그인 버튼" className="h-[55%]" />
         </a>
       </div>
