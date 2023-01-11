@@ -1,28 +1,37 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-function Skill({ countList }: any) {
-  const [progress, setProgress] = useState(1);
+function Skill({ countList }: { countList: number[] }) {
+  const [progress, setProgress] = useState<Record<string, number>>({});
 
-  const progressCount = () => {
-    if (progress === 5) setProgress(1);
-    else setProgress(progress + 1);
+  useEffect(() => {
+    setProgress({
+      ...countList.reduce((obj: Record<string, number>, cur: number) => {
+        obj[cur] = 1;
+        return obj;
+      }, {}),
+      ...progress,
+    });
+  }, [countList]);
+
+  const progressCount = (key: number) => {
+    setProgress({ ...progress, [key]: (progress[key] % 5) + 1 });
   };
 
   return (
     <>
       {countList.map((key: number) => (
-        <div key={key} className="max-h-[72%] pl-[1%] ">
+        <div key={key} className="max-h-[72%] pl-[1%]">
           <div className="flex mb-[1%]">
-            <input placeholder="기술" className="w-[40%] bg-deepGray text-center mr-[2%]" />
+            <input placeholder="기술" className="w-[40%] mr-[2%] text-center bg-deepGray" />
 
             <div
               role="none"
-              onClick={progressCount}
-              className="bg-deepGray w-[100%] flex items-center"
+              onClick={() => progressCount(key)}
+              className="flex w-[100%] items-center bg-deepGray"
             >
               {/* progress가 3일 때 적용됬다 안됬다 함.. */}
               <div
-                className={`h-[100%] w-[${(progress / 5) * 100}%] 
+                className={`h-[100%] w-[${((progress[key] ?? 1) / 5) * 100}%] 
                 text-center text-[15px] bg-yellow ease-linear duration-100 cursor-pointer`}
               >
                 클릭
