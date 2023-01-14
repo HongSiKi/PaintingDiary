@@ -1,8 +1,11 @@
 const prod = process.env.NODE_ENV === 'production';
 
+require('dotenv').config();
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   mode: prod ? 'production' : 'development',
@@ -32,6 +35,7 @@ module.exports = {
   },
   devtool: prod ? undefined : 'source-map',
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
       template: 'public/index.html',
     }),
@@ -52,5 +56,12 @@ module.exports = {
     port: 33000,
     open: true,
     historyApiFallback: true,
+    proxy: {
+      '/api': {
+        target: process.env.PROXY_BACKEND_URL,
+        changeOrigin: true,
+        withCredentials: true,
+      },
+    },
   },
 };
