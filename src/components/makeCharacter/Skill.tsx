@@ -17,6 +17,15 @@ function Skill({ countList }: { countList: number[] }) {
     setProgress({ ...progress, [key]: (progress[key] % 5) + 1 });
   };
 
+  type widthType = Record<number, string>;
+  const width: widthType = {
+    1: 'w-[20%]',
+    2: 'w-[40%]',
+    3: 'w-[60%]',
+    4: 'w-[80%]',
+    5: 'w-[100%]',
+  };
+
   return (
     <>
       {countList.map((key: number) => (
@@ -31,7 +40,7 @@ function Skill({ countList }: { countList: number[] }) {
             >
               {/* progress가 3일 때 적용됬다 안됬다 함.. */}
               <div
-                className={`h-[100%] w-[${((progress[key] ?? 1) / 5) * 100}%] 
+                className={`h-[100%] ${width[progress[key]]}
                 text-center text-[15px] bg-yellow ease-linear duration-100 cursor-pointer`}
               >
                 클릭
