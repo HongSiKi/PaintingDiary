@@ -1,7 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+import { nicknameSlice } from './slices/nicknameSlice';
+
 const store = configureStore({
-  reducer: {},
+  reducer: {
+    nickname: nicknameSlice.reducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
