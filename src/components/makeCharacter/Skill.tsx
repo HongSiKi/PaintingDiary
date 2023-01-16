@@ -38,7 +38,6 @@ function Skill({ countList }: { countList: number[] }) {
               onClick={() => progressCount(key)}
               className="flex w-[100%] items-center bg-deepGray"
             >
-              {/* progress가 3일 때 적용됬다 안됬다 함.. */}
               <div
                 className={`h-[100%] ${width[progress[key]]}
                 text-center text-[15px] bg-yellow ease-linear duration-100 cursor-pointer`}
