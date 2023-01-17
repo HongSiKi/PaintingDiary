@@ -1,7 +1,28 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
 
-function MyRoom() {
-  return <div className="w-[75%] bg-lightGray">3D영역</div>;
+interface CharacterProfileProps {
+  model: JSX.Element[] | JSX.Element;
+}
+
+function MyRoom({ model }: CharacterProfileProps) {
+  return (
+    <div className="w-[75%] bg-lightGray">
+      <Canvas
+        camera={{
+          position: [3, 3, 1],
+        }}
+      >
+        <Suspense fallback={null}>
+          <OrbitControls />
+          <ambientLight intensity={0.5} />
+          <spotLight position={[10, 15, 10]} angle={0.3} />
+          {model}
+        </Suspense>
+      </Canvas>
+    </div>
+  );
 }
 
 export default MyRoom;
