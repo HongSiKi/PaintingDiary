@@ -16,8 +16,7 @@ function MyRoom({ model }: CharacterProfileProps) {
       >
         <Suspense fallback={null}>
           <OrbitControls />
-          <ambientLight intensity={0.5} />
-          <spotLight position={[10, 15, 10]} angle={0.3} />
+          <ambientLight intensity={1.6} />
           {model}
         </Suspense>
       </Canvas>
