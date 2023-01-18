@@ -4,3 +4,4 @@ const makeUrl = (url: string) => `${BACKEND_URL}${url}`;
 
 export const KAKAO_LOGIN_URL = makeUrl('/api/auth/social/kakao');
 export const NAVER_LOGIN_URL = makeUrl('/api/auth/social/naver');
+export const USER_INFO_URL = makeUrl('/api/users');
