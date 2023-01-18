@@ -7,9 +7,6 @@ import { useAppSelector } from '../../redux/hook';
 
 function Menu() {
   const { isLogin, user } = useAppSelector((state) => state.user);
-  if (user === null) {
-    return <div>error!</div>;
-  }
 
   return (
     <div className="flex p-3 border-b-2 border-deepGray text-deepBlack items-center gap-x-2">
@@ -19,7 +16,7 @@ function Menu() {
         </div>
       </NavLink>
 
-      {isLogin ? (
+      {isLogin && user !== null ? (
         <LoggedMenu nickname={user.nickname} hasCharacter={user.hasCharacter} />
       ) : (
         <NonLoggedMenu />
