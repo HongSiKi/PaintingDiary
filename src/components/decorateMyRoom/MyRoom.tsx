@@ -11,7 +11,7 @@ function MyRoom({ model }: CharacterProfileProps) {
     <div className="w-[75%] bg-lightGray">
       <Canvas
         camera={{
-          position: [3, 3, 1],
+          position: [2.5, 2.5, 1.5],
         }}
       >
         <Suspense fallback={null}>
