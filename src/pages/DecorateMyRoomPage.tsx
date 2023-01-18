@@ -6,7 +6,7 @@ import Room from '../components/decorateMyRoom/Room';
 
 function DecorateMyRoomPage() {
   return (
-    <div className="flex mx-[10%] my-[8%] h-screen">
+    <div className="flex h-screen mx-[10%]">
       <MyRoom model={<Room />} />
       <Assets />
     </div>
