@@ -8,8 +8,8 @@ function Nickname() {
   const [nickname, setNickname] = useState<string>('');
 
   const message = useAppSelector((state) => state.nickname.message);
+  const checked = useAppSelector((state) => state.nickname.checked);
   const isDuplicate = useAppSelector((state) => state.nickname.isDuplicate);
-  const isClick = useAppSelector((state) => state.nickname.isClick);
 
   const onChangeNickname = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNickname(e.target.value);
@@ -20,11 +20,16 @@ function Nickname() {
       dispatch(nicknameSlice.actions.message(''));
     }
   };
+
   const checkDuplicate = () => {
-    dispatch(nicknameSlice.actions.isClick(true));
-    // 항상 닉네임이 중복되지 않는다고 가정
-    dispatch(nicknameSlice.actions.isDuplicate(false));
-    return { result: { duplicate_nickname: false } };
+    const url = `/api/characters/nickname?nickname=${nickname}`;
+    fetch(url)
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        return dispatch(nicknameSlice.actions.isDuplicate(res.result.duplicated));
+      });
   };
 
   return (
@@ -35,14 +40,19 @@ function Nickname() {
           placeholder="캐릭터 닉네임"
           className="w-[80%] pl-[1%] border-2 border-deepGray"
         />
-        <button onClick={checkDuplicate} type="button" className="w-[20%] ml-[1%] bg-yellow">
+        <button
+          onClick={checkDuplicate}
+          type="button"
+          disabled={!(nickname.length >= 2 && nickname.length < 7)}
+          className="w-[20%] ml-[1%] bg-yellow"
+        >
           중복체크
         </button>
       </div>
       {nickname.length > 0 ? <div>{message}</div> : ''}
       <div>
-        {isClick && isDuplicate ? '다른 닉네임을 입력해주세요.' : ''}
-        {isClick && !isDuplicate && message === '' ? '사용가능한 닉네임입니다.' : ''}
+        {checked && isDuplicate && message === '' ? '다른 닉네임을 입력해주세요.' : ''}
+        {checked && !isDuplicate && message === '' ? '사용가능한 닉네임입니다.' : ''}
       </div>
     </>
   );
