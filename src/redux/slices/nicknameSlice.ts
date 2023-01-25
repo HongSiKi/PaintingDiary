@@ -2,16 +2,15 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const nicknameSlice = createSlice({
   name: 'nickname',
-  initialState: { message: '', isClick: false, isDuplicate: true },
+  initialState: { message: '', checked: false, isDuplicate: true },
   reducers: {
     message: (state, action) => {
       state.message = action.payload;
-    },
-    isClick: (state, action) => {
-      state.isClick = action.payload;
+      state.checked = false;
     },
     isDuplicate: (state, action) => {
       state.isDuplicate = action.payload;
+      state.checked = true;
     },
   },
 });
