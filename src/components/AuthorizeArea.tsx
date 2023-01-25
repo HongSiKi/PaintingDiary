@@ -10,7 +10,7 @@ export default function AuthorizeArea({ element }: AuthorizeProps) {
   const userState = useAppSelector((state) => state.user);
 
   if (!userState.isLogin) {
-    return <Navigate to="/?login=true" />;
+    return <Navigate to="/?login-modal=true" />;
   }
 
   return <>{element}</>;
