@@ -53,6 +53,7 @@ module.exports = {
     'react/jsx-no-useless-fragment': 'off',
     'react/require-default-props': 'warn',
     'import/prefer-default-export': 'warn',
+    'react/no-unknown-property': 'warn',
   },
 
   settings: {
