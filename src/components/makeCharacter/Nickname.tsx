@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../redux/hook';
 
-import { nicknameSlice } from '../../redux/slices/nicknameSlice';
+import nicknameSlice from '../../redux/slices/nicknameSlice';
 
 function Nickname() {
   const dispatch = useAppDispatch();

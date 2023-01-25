@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const nicknameSlice = createSlice({
+const nicknameSlice = createSlice({
   name: 'nickname',
   initialState: { message: '', isClick: false, isDuplicate: true },
   reducers: {
@@ -15,3 +15,5 @@ export const nicknameSlice = createSlice({
     },
   },
 });
+
+export default nicknameSlice;
