@@ -51,8 +51,8 @@ function Nickname() {
       </div>
       {nickname.length > 0 ? <div>{message}</div> : ''}
       <div>
-        {checked && isDuplicate && message === '' ? '다른 닉네임을 입력해주세요.' : ''}
-        {checked && !isDuplicate && message === '' ? '사용가능한 닉네임입니다.' : ''}
+        {checked && message === '' && isDuplicate ? '다른 닉네임을 입력해주세요.' : ''}
+        {checked && message === '' && !isDuplicate ? '사용가능한 닉네임입니다.' : ''}
       </div>
     </>
   );
