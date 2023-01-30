@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../redux/hook';
 
 import nicknameSlice from '../../redux/slices/nicknameSlice';
