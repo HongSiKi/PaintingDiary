@@ -1,8 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = {
+  nickname: '',
+  message: '',
+  checked: false,
+  isDuplicate: true,
+};
+
 const nicknameSlice = createSlice({
   name: 'nickname',
-  initialState: { nickname: '', message: '', checked: false, isDuplicate: true },
+  initialState,
   reducers: {
     nickname: (state, action) => {
       state.nickname = action.payload;
