@@ -5,14 +5,13 @@ import nicknameSlice from '../../redux/slices/nicknameSlice';
 
 function Nickname() {
   const dispatch = useAppDispatch();
-  const [nickname, setNickname] = useState<string>('');
-
+  const nickname = useAppSelector((state) => state.nickname.nickname);
   const message = useAppSelector((state) => state.nickname.message);
   const checked = useAppSelector((state) => state.nickname.checked);
   const isDuplicate = useAppSelector((state) => state.nickname.isDuplicate);
 
   const onChangeNickname = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNickname(e.target.value);
+    dispatch(nicknameSlice.actions.nickname(e.target.value));
 
     if (e.target.value.length < 2 || e.target.value.length > 7) {
       dispatch(nicknameSlice.actions.message('2글자 이상 7글자 미만인 닉네임을 입력해주세요.'));

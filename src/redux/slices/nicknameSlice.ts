@@ -2,8 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const nicknameSlice = createSlice({
   name: 'nickname',
-  initialState: { message: '', checked: false, isDuplicate: true },
+  initialState: { nickname: '', message: '', checked: false, isDuplicate: true },
   reducers: {
+    nickname: (state, action) => {
+      state.nickname = action.payload;
+    },
     message: (state, action) => {
       state.message = action.payload;
       state.checked = false;
