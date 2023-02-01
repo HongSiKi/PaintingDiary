@@ -11,12 +11,14 @@ function Nickname() {
   const isDuplicate = useAppSelector((state) => state.nickname.isDuplicate);
 
   const onChangeNickname = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(nicknameSlice.actions.nickname(e.target.value));
+    dispatch(nicknameSlice.actions.saveNickname(e.target.value));
 
     if (e.target.value.length < 2 || e.target.value.length > 7) {
-      dispatch(nicknameSlice.actions.message('2글자 이상 7글자 미만인 닉네임을 입력해주세요.'));
+      dispatch(
+        nicknameSlice.actions.updateMessage('2글자 이상 7글자 미만인 닉네임을 입력해주세요.'),
+      );
     } else {
-      dispatch(nicknameSlice.actions.message(''));
+      dispatch(nicknameSlice.actions.updateMessage(''));
     }
   };
 

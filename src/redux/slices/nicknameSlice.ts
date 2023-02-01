@@ -11,10 +11,10 @@ const nicknameSlice = createSlice({
   name: 'nickname',
   initialState,
   reducers: {
-    nickname: (state, action) => {
+    saveNickname: (state, action) => {
       state.nickname = action.payload;
     },
-    message: (state, action) => {
+    updateMessage: (state, action) => {
       state.message = action.payload;
       state.checked = false;
     },
