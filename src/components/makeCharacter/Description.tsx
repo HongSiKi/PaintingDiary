@@ -55,7 +55,16 @@ function Description() {
       />
       <Skills />
       <div className="flex h-[8%] mt-[5%] justify-between">
-        <Button onClick={moveToMain} text="생성완료" disabled={!(!isDuplicate && message === '')} />
+        <Button
+          onClick={moveToMain}
+          text="생성완료"
+          disabled={
+            !(!isDuplicate && message === '') ||
+            !skillList
+              .map((el) => !!(el.description === '' || el.title === ''))
+              .every((value) => !value)
+          }
+        />
         <Button text="취소" />
       </div>
     </div>
