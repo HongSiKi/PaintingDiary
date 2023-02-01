@@ -28,19 +28,19 @@ const makeCharacterSlice = createSlice({
   name: 'myCharacter',
   initialState,
   reducers: {
-    link: (state, action) => {
+    updateLink: (state, action) => {
       state.link = action.payload;
     },
-    title: (state, action) => {
+    updateTitle: (state, action) => {
       state.skillList[action.payload.index].title = action.payload.title;
     },
-    description: (state, action) => {
+    updateDescription: (state, action) => {
       state.skillList[action.payload.index].description = action.payload.description;
     },
-    progress: (state, action) => {
+    updateProgress: (state, action) => {
       state.skillList[action.payload.index].progress = action.payload.progress;
     },
-    skillList: (state, action) => {
+    updateSkillList: (state, action) => {
       state.skillList.push(action.payload);
     },
   },

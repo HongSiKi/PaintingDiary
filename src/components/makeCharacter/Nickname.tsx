@@ -11,7 +11,7 @@ function Nickname() {
   const isDuplicate = useAppSelector((state) => state.nickname.isDuplicate);
 
   const onChangeNickname = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(nicknameSlice.actions.saveNickname(e.target.value));
+    dispatch(nicknameSlice.actions.updateNickname(e.target.value));
 
     if (e.target.value.length < 2 || e.target.value.length > 7) {
       dispatch(

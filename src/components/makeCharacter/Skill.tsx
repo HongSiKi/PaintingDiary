@@ -18,24 +18,30 @@ function Skill({ countList }: { countList: number[] }) {
   }, [countList]);
 
   const onChangeTitle = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
-    dispatch(makeCharacterSlice.actions.title({ title: e.target.value, index: index - 1 }));
+    dispatch(makeCharacterSlice.actions.updateTitle({ title: e.target.value, index: index - 1 }));
   };
 
   const progressCount = (index: number) => {
     setProgress({ ...progress, [index]: (progress[index] % 5) + 1 });
 
     if (progress[index] === 5) {
-      dispatch(makeCharacterSlice.actions.progress({ progress: 1, index: index - 1 }));
+      dispatch(makeCharacterSlice.actions.updateProgress({ progress: 1, index: index - 1 }));
     } else {
       dispatch(
-        makeCharacterSlice.actions.progress({ progress: progress[index] + 1, index: index - 1 }),
+        makeCharacterSlice.actions.updateProgress({
+          progress: progress[index] + 1,
+          index: index - 1,
+        }),
       );
     }
   };
 
   const onChangeDescription = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     dispatch(
-      makeCharacterSlice.actions.description({ description: e.target.value, index: index - 1 }),
+      makeCharacterSlice.actions.updateDescription({
+        description: e.target.value,
+        index: index - 1,
+      }),
     );
   };
 

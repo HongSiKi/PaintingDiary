@@ -18,7 +18,7 @@ function Skills() {
     countArr.push(counter);
     setCountList(countArr);
     setIsClick(true);
-    dispatch(makeCharacterSlice.actions.skillList(skill));
+    dispatch(makeCharacterSlice.actions.updateSkillList(skill));
   };
 
   return (

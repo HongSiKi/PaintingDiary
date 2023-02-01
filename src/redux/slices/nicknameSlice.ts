@@ -11,7 +11,7 @@ const nicknameSlice = createSlice({
   name: 'nickname',
   initialState,
   reducers: {
-    saveNickname: (state, action) => {
+    updateNickname: (state, action) => {
       state.nickname = action.payload;
     },
     updateMessage: (state, action) => {
