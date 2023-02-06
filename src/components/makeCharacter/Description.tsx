@@ -11,7 +11,6 @@ import Skills from './Skills';
 function Description() {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const message = useAppSelector((state) => state.nickname.message);
   const isDuplicate = useAppSelector((state) => state.nickname.isDuplicate);
   const nickname = useAppSelector((state) => state.nickname.nickname);
   const link = useAppSelector((state) => state.makeCharacter.link);
@@ -59,10 +58,9 @@ function Description() {
           onClick={moveToMain}
           text="생성완료"
           disabled={
-            !(!isDuplicate && message === '') ||
-            !skillList
-              .map((el) => !!(el.description === '' || el.title === ''))
-              .every((value) => !value)
+            isDuplicate ||
+            skillList.length === 0 ||
+            skillList.map((el) => !(el.description === '' || el.title === '')).includes(false)
           }
         />
         <Button text="취소" />
