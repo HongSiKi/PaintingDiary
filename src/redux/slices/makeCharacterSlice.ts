@@ -12,6 +12,12 @@ interface IState {
     description: string;
     progress: number;
   }>;
+  deleteSkill: Array<{
+    id: number;
+    title: string;
+    description: string;
+    progress: number;
+  }>;
 }
 
 const initialState: IState = {
@@ -22,6 +28,7 @@ const initialState: IState = {
     progress: 1,
   },
   skillList: [],
+  deleteSkill: [],
 };
 
 const makeCharacterSlice = createSlice({
@@ -42,6 +49,9 @@ const makeCharacterSlice = createSlice({
     },
     updateSkillList: (state, action) => {
       state.skillList.push(action.payload);
+    },
+    deleteSkill: (state, action) => {
+      state.skillList = state.skillList.filter((_, index) => index !== action.payload);
     },
   },
 });
