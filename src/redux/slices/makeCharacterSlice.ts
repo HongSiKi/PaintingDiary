@@ -3,13 +3,6 @@ import { createSlice } from '@reduxjs/toolkit';
 interface IState {
   link: string;
   skillList: Array<{
-    id: number;
-    title: string;
-    description: string;
-    progress: number;
-  }>;
-  deleteSkill: Array<{
-    id: number;
     title: string;
     description: string;
     progress: number;
@@ -19,7 +12,6 @@ interface IState {
 const initialState: IState = {
   link: '',
   skillList: [],
-  deleteSkill: [],
 };
 
 const makeCharacterSlice = createSlice({
@@ -31,7 +23,6 @@ const makeCharacterSlice = createSlice({
     },
     updateTitle: (state, action) => {
       state.skillList[action.payload.index].title = action.payload.title;
-      state.skillList[action.payload.index].id = action.payload.id;
     },
     updateDescription: (state, action) => {
       state.skillList[action.payload.index].description = action.payload.description;
