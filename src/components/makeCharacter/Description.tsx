@@ -22,16 +22,21 @@ function Description() {
 
   const moveToMain = () => {
     const url = '/api/characters';
+    const data = {
+      nickname,
+      link,
+      skill_list: skillList,
+    };
+    const filteredData = Object.entries(data)
+      .filter(([key, value]) => value)
+      .reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {});
+
     fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        nickname,
-        link,
-        skill_list: skillList,
-      }),
+      body: JSON.stringify(filteredData),
     })
       .then((response) => {
         return response.json();
