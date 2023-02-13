@@ -54,6 +54,10 @@ module.exports = {
     'react/require-default-props': 'warn',
     'import/prefer-default-export': 'warn',
     'react/no-unknown-property': 'warn',
+    'prefer-destructuring': 'warn',
+    'react/no-array-index-key': 'warn',
+    'jsx-a11y/click-events-have-key-events': 'warn',
+    'jsx-a11y/no-static-element-interactions': 'warn',
   },
 
   settings: {

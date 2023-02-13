@@ -1,13 +1,12 @@
 import React from 'react';
 
 import Assets from '../components/decorateMyRoom/Assets';
-import MyRoom from '../components/decorateMyRoom/MyRoom';
-import Room from '../components/decorateMyRoom/Room';
+import MyRoomEditor from '../components/decorateMyRoom/MyRoomEditor';
 
 function DecorateMyRoomPage() {
   return (
-    <div className="flex h-screen mx-[10%]">
-      <MyRoom model={<Room />} />
+    <div className="flex h-screen">
+      <MyRoomEditor />
       <Assets />
     </div>
   );

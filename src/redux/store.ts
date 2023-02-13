@@ -2,11 +2,13 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import nicknameSlice from './slices/nicknameSlice';
 import userSlice from './slices/userSlice';
+import assetSlice from './slices/assetSlice';
 
 const store = configureStore({
   reducer: {
     nickname: nicknameSlice.reducer,
     user: userSlice.reducer,
+    asset: assetSlice.reducer,
   },
 });
 
