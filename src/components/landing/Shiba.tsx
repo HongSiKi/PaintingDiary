@@ -6,7 +6,7 @@ import { useGLTF } from '@react-three/drei';
 function Shiba() {
   const {
     nodes: { Sketchfab_model: shibaObject },
-  } = useGLTF('/resources/shiba.gltf');
+  } = useGLTF('/resources/shiba/shiba.gltf');
 
   return <primitive object={shibaObject} />;
 }
