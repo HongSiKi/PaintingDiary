@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+import characterSlice from './slices/characterSlice';
 
 import nicknameSlice from './slices/nicknameSlice';
 import userSlice from './slices/userSlice';
@@ -7,6 +8,7 @@ const store = configureStore({
   reducer: {
     nickname: nicknameSlice.reducer,
     user: userSlice.reducer,
+    character: characterSlice.reducer,
   },
 });
 
