@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+import { useAppDispatch } from '../redux/hook';
 
 import Character from '../components/makeCharacter/Character';
 import Description from '../components/makeCharacter/Description';
+import characterSlice from '../redux/slices/characterSlice';
 
 function MakeCharacterPage() {
-  const characters = ['🐶', '🐱', '🐰'];
+  const dispatch = useAppDispatch();
   const [clickIndex, setClickIndex] = useState(0);
+  const characters = ['🐶', '🐱', '🐰'];
   const onClickCharacter = (index: number) => {
     setClickIndex(index);
+    dispatch(characterSlice.actions.clickedCharacter(index));
   };
 
   return (
@@ -30,7 +34,7 @@ function MakeCharacterPage() {
       </div>
 
       <div className="flex mt-[1%] h-[100%]">
-        <Character index={clickIndex} />
+        <Character />
         <Description />
       </div>
     </div>

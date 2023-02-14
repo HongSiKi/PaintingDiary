@@ -1,16 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAppSelector } from '../../redux/hook';
 
 import CharacterProfile from '../landing/CharacterProfile';
 import Dog from '../landing/Shiba';
 import Cat from './Cat';
 import Rabbit from './Rabbit';
 
-function Character({ index }: { index: number }) {
+function Character() {
   const navigate = useNavigate();
   const onClick = () => {
     navigate('/decorateCharacter');
   };
+  const index = useAppSelector((state) => state.character.index);
 
   return (
     <div className="h-[100%] w-[30%]">
