@@ -8,7 +8,13 @@ import characterSlice from '../redux/slices/characterSlice';
 function MakeCharacterPage() {
   const dispatch = useAppDispatch();
   const [clickIndex, setClickIndex] = useState(0);
-  const characters = ['🐶', '🐱', '🐰'];
+  // 현재 서버가 없어서 하드코딩
+  const characters = [
+    { id: 0, src: 'http://강아지3d', name: '🐶' },
+    { id: 1, src: 'http://고양이3d', name: '🐱' },
+    { id: 2, src: 'http://토끼3d', name: '🐰' },
+  ];
+
   const onClickCharacter = (index: number) => {
     setClickIndex(index);
     dispatch(characterSlice.actions.clickedCharacter(index));
@@ -27,7 +33,7 @@ function MakeCharacterPage() {
                 clickIndex === index ? 'bg-yellow' : 'bg-deepGray'
               } flex w-[20%] items-center justify-center text-[35px] cursor-pointer `}
             >
-              {character}
+              {character.name}
             </div>
           );
         })}
