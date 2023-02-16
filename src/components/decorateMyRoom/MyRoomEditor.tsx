@@ -32,7 +32,6 @@ function MyRoomEditor() {
         <Suspense fallback={null}>
           <ambientLight intensity={1.6} />
           <EditorPane width={width} height={height} color="#999999" />
-          <gridHelper args={[width, height]} />
         </Suspense>
       </Canvas>
     </div>

@@ -22,11 +22,13 @@ export interface Asset {
 export interface AssetObject extends Asset {
   position: [number, number, number];
   rotation: [number, number, number];
-  geometry: [number, number, number];
+  geometry: [number, number, number] | [number, number];
 }
 
 export interface AssetCategory {
   name: string;
+  default: string | null;
+  type: 'BACKGROUND' | 'FLOOR' | 'ASSET';
   assetList: Asset[];
 }
 
