@@ -15,7 +15,7 @@ function Description() {
   const isDuplicate = useAppSelector((state) => state.nickname.isDuplicate);
 
   return (
-    <div className="flex flex-col w-[70%] h-[70%] pl-[3%]">
+    <div className="flex flex-col w-[70%] pl-[3%]">
       <Nickname />
       <input
         placeholder="자기소개 링크(optional)"

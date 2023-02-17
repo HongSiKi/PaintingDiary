@@ -54,6 +54,7 @@ module.exports = {
     'react/require-default-props': 'warn',
     'import/prefer-default-export': 'warn',
     'react/no-unknown-property': 'warn',
+    'react/no-array-index-key': 'warn',
   },
 
   settings: {

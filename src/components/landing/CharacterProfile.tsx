@@ -2,20 +2,20 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
-interface CharacterProfileProps {
+interface IProps {
   model: JSX.Element[] | JSX.Element;
+  camera: Object;
+  intensity?: number;
 }
 
-function CharacterProfile({ model }: CharacterProfileProps) {
+function CharacterProfile({ model, camera, intensity }: IProps) {
   return (
     <div className="h-[100%]">
-      <Canvas
-        camera={{
-          position: [0.1, 0.1, 2],
-        }}
-      >
+      <Canvas camera={camera}>
         <Suspense fallback={null}>
-          <OrbitControls />
+          <OrbitControls enableDamping />
+          <ambientLight intensity={intensity} />
+          <directionalLight />
           {model}
         </Suspense>
       </Canvas>
