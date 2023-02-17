@@ -8,11 +8,19 @@ import Skills from './Skills';
 
 function Description() {
   const navigate = useNavigate();
-  const moveToMain = () => {
-    navigate('/');
-  };
+  const index = useAppSelector((state) => state.character.index);
   const message = useAppSelector((state) => state.nickname.message);
   const isDuplicate = useAppSelector((state) => state.nickname.isDuplicate);
+
+  const moveToMain = () => {
+    // 현재 서버가 없어서 하드코딩
+    const promiseData = new Promise((resolve, reject) => {
+      resolve(index);
+    });
+    //! result값을 어디에 같이 넘겨줘야할지 몰라 일단 클릭한 index 값이 넘겨지는 것만 확인
+    promiseData.then((result) => console.log(result));
+    navigate('/');
+  };
 
   return (
     <div className="flex flex-col w-[70%] pl-[3%]">
