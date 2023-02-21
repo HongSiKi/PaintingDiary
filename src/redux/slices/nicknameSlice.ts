@@ -1,17 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = {
+  nickname: '',
+  message: '',
+  checked: false,
+  isDuplicate: true,
+};
+
 const nicknameSlice = createSlice({
   name: 'nickname',
-  initialState: { message: '', isClick: false, isDuplicate: true },
+  initialState,
   reducers: {
-    message: (state, action) => {
-      state.message = action.payload;
+    updateNickname: (state, action) => {
+      state.nickname = action.payload;
     },
-    isClick: (state, action) => {
-      state.isClick = action.payload;
+    updateMessage: (state, action) => {
+      state.message = action.payload;
+      state.checked = false;
     },
     isDuplicate: (state, action) => {
       state.isDuplicate = action.payload;
+      state.checked = true;
     },
   },
 });
