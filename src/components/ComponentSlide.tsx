@@ -46,7 +46,7 @@ function ComponentSlide({ elements, min, mid, max }: ComponentSlideProps) {
         &lt;
       </button>
       <div className="overflow-x-scroll" ref={scrollRef}>
-        <div className="flex w-full gap-3 sm:bg-blend-color md:bg-blend-color-burn lg:bg-blend-color-dodge">
+        <div className="flex w-full gap-3">
           {elements.map((element, i) => (
             <DynamicHolder min={min} mid={mid} max={max} key={i}>
               {element}
