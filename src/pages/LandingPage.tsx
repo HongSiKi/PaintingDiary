@@ -1,7 +1,8 @@
 import React from 'react';
 
 import CharacterDescription from '../components/landing/CharacterDescription';
-import ComponentSlide from '../components/ComponentSlide';
+import Carousel from '../components/Carousel';
+import Card from '../components/Card';
 
 function LandingPage() {
   const imageList = [
@@ -18,12 +19,9 @@ function LandingPage() {
 
   return (
     <div>
-      <ComponentSlide
-        min={2}
-        mid={4}
-        max={6}
-        elements={imageList.map((src) => (
-          <img className="w-full h-full" key={src} src={src} alt={src} />
+      <Carousel
+        elements={imageList.map((src, i) => (
+          <Card key={i} imgSrc={src} text={src} />
         ))}
       />
       <CharacterDescription />
