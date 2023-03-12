@@ -1,4 +1,5 @@
 import React, { ReactNode, useRef } from 'react';
+import WidthTouchScroll from './WidthTouchScroll';
 
 interface CarouselProps {
   elements: ReactNode[];
@@ -26,10 +27,7 @@ function Carousel({ elements }: CarouselProps) {
       >
         &lt;
       </button>
-      <div
-        className="mx-[10px] align-middle inline-block w-[calc(100%-68px)] overflow-x-scroll p-3"
-        ref={scrollRef}
-      >
+      <WidthTouchScroll className="mx-[10px] align-middle inline-block w-[calc(100%-68px)] p-3">
         <div className="w-max inline-block">
           {elements.map((element, i) => (
             <div key={i} className="mr-3 inline-block">
@@ -37,7 +35,7 @@ function Carousel({ elements }: CarouselProps) {
             </div>
           ))}
         </div>
-      </div>
+      </WidthTouchScroll>
       <button
         className="w-6 hover:bg-deepGray rounded-full"
         type="button"
