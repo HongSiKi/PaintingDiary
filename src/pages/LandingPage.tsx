@@ -1,5 +1,6 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
+import Carousel from '../components/landing/Carousel';
 import CharacterDescription from '../components/landing/CharacterDescription';
 
 function LandingPage() {
@@ -11,37 +12,20 @@ function LandingPage() {
     'https://i.pinimg.com/474x/19/97/75/199775b7651168880acdbf52f2c7c72a.jpg',
     'https://file.thisisgame.com/upload/tboard/user/2016/05/29/20160529004354_7091.jpeg',
   ];
-  const ref = useRef<HTMLDivElement>(null);
-
-  const prevButton = () => {
-    if (ref.current) ref.current.scrollLeft += -200;
-  };
-  const nextButton = () => {
-    if (ref.current) ref.current.scrollLeft += 200;
-  };
 
   return (
     <div>
-      <div className="flex flex-row h-[30%] mx-[1%]">
-        <button type="button" onClick={prevButton} className="text-[200%] w-[5%]">
-          &lt;
-        </button>
-        <div ref={ref} className="flex flex-row overflow-scroll">
-          {imgSrcList.map((el, index) => (
-            <img
-              key={index}
-              alt={el}
-              src={el}
-              // 기본값 50, sm, md, lg에 따라 사진 비율 변경
-              className="aspect-square px-[1%] w-[50%] sm:w-[38%] md:w-[30%] lg:w-[18%]"
-            />
-          ))}
-        </div>
-        <button type="button" onClick={nextButton} className="text-[200%] w-[5%]">
-          &gt;
-        </button>
-      </div>
-
+      <Carousel
+        elements={imgSrcList.map((el, index) => (
+          <img
+            key={index}
+            alt={el}
+            src={el}
+            // 기본값 50, sm, md, lg에 따라 사진 비율 변경
+            className="aspect-square px-[1%] w-[50%] sm:w-[38%] md:w-[30%] lg:w-[18%]"
+          />
+        ))}
+      />
       <CharacterDescription />
     </div>
   );
