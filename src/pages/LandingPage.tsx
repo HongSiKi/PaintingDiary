@@ -21,7 +21,7 @@ function LandingPage() {
     <div>
       <Carousel
         elements={imageList.map((src, i) => (
-          <Card key={i} imgSrc={src} text={src} />
+          <Card key={i} imgSrc={src} text={i % 2 === 0 ? src : undefined} />
         ))}
       />
       <CharacterDescription />
