@@ -36,25 +36,19 @@ function LandingPage() {
   ];
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <Carousel
         elements={imgSrcList.map((el, index) => (
           <div
             key={index}
-            className="flex flex-col aspect-square m-[1%] w-[50%] sm:w-[38%] md:w-[30%] lg:w-[18%] border-[1px] border-deepGray shadow"
+            className="inline-block align-top w-[50vw] sm:w-[50vw] md:w-[30vw] lg:w-[17vw] m-[5px] mb-[10px] border-[1px] border-deepGray shadow"
           >
             {el.text ? (
-              <img
-                alt={el.id.toString()}
-                src={el.src}
-                className="h-[90%] sm:h-[85%] md:h-[83%] lg:h-[90%]"
-              />
+              <img alt={el.id.toString()} src={el.src} className="aspect-square" />
             ) : (
-              <img alt={el.id.toString()} src={el.src} className="h-[100%]" />
+              <img alt={el.id.toString()} src={el.src} className="aspect-square w-[100%]" />
             )}
-            <div className="flex min-h-[10%] justify-center items-center font-semibold">
-              {el.text}
-            </div>
+            <div className="text-center font-semibold">{el.text}</div>
           </div>
         ))}
       />

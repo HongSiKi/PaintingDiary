@@ -16,14 +16,17 @@ function Carousel({ elements }: ICarousel) {
   };
 
   return (
-    <div className="flex flex-row h-[30%] mx-[1%]">
-      <button type="button" onClick={() => onClickHandler(-200)} className="text-[200%] w-[5%]">
+    <div className="w-[5000px]">
+      <button type="button" onClick={() => onClickHandler(-200)} className="w-[3vw] align-middle">
         &lt;
       </button>
-      <div ref={ref} className="flex flex-row overflow-scroll">
+      <div
+        ref={ref}
+        className="inline-block align-middle w-[94vw] whitespace-nowrap overflow-x-auto"
+      >
         {elements}
       </div>
-      <button type="button" onClick={() => onClickHandler(200)} className="text-[200%] w-[5%]">
+      <button type="button" onClick={() => onClickHandler(200)} className="w-[3vw] align-middle">
         &gt;
       </button>
     </div>
