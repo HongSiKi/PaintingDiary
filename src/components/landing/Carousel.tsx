@@ -15,12 +15,11 @@ function Carousel({ elements }: ICarousel) {
     });
   };
 
-  const handleMouseMove = (e: any) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     // 스크롤 위치
     const prevX = div?.scrollLeft;
     // 클릭한 이미지 위치
     const newX = e.clientX;
-    console.log(prevX, newX);
 
     // 스크롤
     div?.scrollTo({
