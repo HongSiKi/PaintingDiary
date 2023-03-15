@@ -6,11 +6,25 @@ interface ICarousel {
 
 function Carousel({ elements }: ICarousel) {
   const ref = useRef<HTMLDivElement>(null);
+  const div = ref.current;
 
   const onClickHandler = (offset: number) => {
-    const div = ref.current;
     div?.scrollTo({
       left: div.scrollLeft + offset,
+      behavior: 'smooth',
+    });
+  };
+
+  const handleMouseMove = (e: any) => {
+    // 스크롤 위치
+    const prevX = div?.scrollLeft;
+    // 클릭한 이미지 위치
+    const newX = e.clientX;
+    console.log(prevX, newX);
+
+    // 스크롤
+    div?.scrollTo({
+      left: newX,
       behavior: 'smooth',
     });
   };
@@ -23,6 +37,7 @@ function Carousel({ elements }: ICarousel) {
       <div
         ref={ref}
         className="inline-block align-middle w-[94vw] whitespace-nowrap overflow-x-auto"
+        onMouseDown={handleMouseMove}
       >
         {elements}
       </div>
