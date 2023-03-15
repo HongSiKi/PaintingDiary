@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, useRef, useState } from 'react';
 
-function WidthTouchScroll({ className, children }: PropsWithChildren<{ className: string }>) {
+function WithTouchScroll({ className, children }: PropsWithChildren<{ className: string }>) {
   const [isDragging, setIsDragging] = useState(false);
   const [previousX, setPreviousX] = useState(0);
   const myRef = useRef<HTMLDivElement>(null);
@@ -20,7 +20,7 @@ function WidthTouchScroll({ className, children }: PropsWithChildren<{ className
       const element = myRef.current;
       if (element) {
         const delta = event.clientX - previousX;
-        element.scrollLeft += delta;
+        element.scrollLeft += delta; // scrollTo
         setPreviousX(event.clientX);
       }
 
@@ -45,4 +45,4 @@ function WidthTouchScroll({ className, children }: PropsWithChildren<{ className
   );
 }
 
-export default WidthTouchScroll;
+export default WithTouchScroll;
