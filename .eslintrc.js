@@ -55,6 +55,7 @@ module.exports = {
     'import/prefer-default-export': 'warn',
     'react/no-unknown-property': 'warn',
     'react/no-array-index-key': 'warn',
+    'jsx-a11y/no-static-element-interactions': 'warn',
   },
 
   settings: {
