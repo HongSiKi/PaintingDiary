@@ -1,4 +1,4 @@
-import React, { ReactNode, useRef } from 'react';
+import React, { ReactNode, useRef, useState } from 'react';
 
 interface ICarousel {
   elements: ReactNode[];
@@ -7,6 +7,9 @@ interface ICarousel {
 function Carousel({ elements }: ICarousel) {
   const ref = useRef<HTMLDivElement>(null);
   const div = ref.current;
+  const refId = useRef<number | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [previousX, setPreviousX] = useState(0);
 
   const onClickHandler = (offset: number) => {
     div?.scrollTo({
@@ -15,14 +18,28 @@ function Carousel({ elements }: ICarousel) {
     });
   };
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    // 클릭한 이미지 위치
-    const newX = e.clientX;
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsDragging(true);
+    setPreviousX(e.clientX);
+  };
 
-    div?.scrollTo({
-      left: newX,
-      behavior: 'smooth',
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isDragging || !ref.current || refId.current) {
+      return;
+    }
+
+    refId.current = requestAnimationFrame(() => {
+      if (div) {
+        const delta = e.clientX - previousX;
+        div.scrollLeft += delta;
+        setPreviousX(e.clientX);
+      }
+      refId.current = null;
     });
+  };
+
+  const handleMouseUp = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsDragging(false);
   };
 
   return (
@@ -33,7 +50,9 @@ function Carousel({ elements }: ICarousel) {
       <div
         ref={ref}
         className="inline-block align-middle w-[94vw] whitespace-nowrap overflow-x-auto"
-        onMouseDown={handleMouseMove}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
       >
         {elements}
       </div>
