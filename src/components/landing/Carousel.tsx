@@ -24,7 +24,7 @@ function Carousel({ elements }: ICarousel) {
   };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isDragging || !ref.current || refId.current) {
+    if (!isDragging || !div || refId.current) {
       return;
     }
 
