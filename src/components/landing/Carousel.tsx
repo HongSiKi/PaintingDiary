@@ -38,13 +38,13 @@ function Carousel({ elements }: ICarousel) {
     });
   };
 
-  const handleMouseUp = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseUp = () => {
     setIsDragging(false);
   };
 
   return (
     <div className="w-[5000px]">
-      <button type="button" onClick={() => onClickHandler(-200)} className="w-[3vw] align-middle">
+      <button type="button" onClick={() => onClickHandler(-200)} className="w-[3vw]">
         &lt;
       </button>
       <div
@@ -56,7 +56,7 @@ function Carousel({ elements }: ICarousel) {
       >
         {elements}
       </div>
-      <button type="button" onClick={() => onClickHandler(200)} className="w-[3vw] align-middle">
+      <button type="button" onClick={() => onClickHandler(200)} className="w-[3vw]">
         &gt;
       </button>
     </div>
