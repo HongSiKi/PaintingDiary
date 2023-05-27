@@ -19,10 +19,11 @@ const convertObjectWithCamelCase = (obj: any): any => {
   return newObj;
 };
 
-const customFetch = (url: string, options: any = {}) => {
+const customFetch = <T>(url: string, options: any = {}) => {
   return fetch(url, options)
     .then((res) => res.json())
-    .then((json) => convertObjectWithCamelCase(json));
+    .then((json) => convertObjectWithCamelCase(json))
+    .then((json) => json as T);
 };
 
 export default customFetch;
