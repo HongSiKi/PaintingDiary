@@ -15,7 +15,7 @@ import { useAppDispatch } from './redux/hook';
 import { getUserInfo } from './api/userAPi';
 import userSlice from './redux/slices/userSlice';
 import AuthorizeArea from './components/AuthorizeArea';
-import PostsPage from './pages/PostsPage';
+import PostsScrollPage from './pages/PostsScrollPage';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -51,7 +51,7 @@ function App() {
         <Route path="my-room" element={<AuthorizeArea element={<MyRoomPage />} />} />
         <Route path="main" element={<MainPage />} />
         <Route path="join" element={<JoinPage />} />
-        <Route path="posts" element={<PostsPage />} />
+        <Route path="posts" element={<PostsScrollPage />} />
       </Routes>
     </BrowserRouter>
   );
